@@ -10,7 +10,6 @@ import reactor.core.publisher.Mono;
 
 import java.time.LocalDateTime;
 
-// http://localhost:8080/api/v1/post/create
 @Slf4j
 @Service
 @RequiredArgsConstructor
@@ -25,8 +24,31 @@ public class PostService {
                                  .createdAt(LocalDateTime.now())
                                  .updatedAt(LocalDateTime.now())
                         .build())
-                .doOnSuccess(p -> {log.info("IN createPost - post: {} created", p);
+                .doOnSuccess(p -> {log.info("Success NEW POST : {} ", p);
                 });
+    }
+    public Mono<Void> updatePost(String text, String title, Long id) {
+        return postRepository.update(text, title, LocalDateTime.now(), id)
+                .doOnSuccess(u -> {
+                    log.info("Success UPDATE in POST : {} ", u);
+                });
+    }
+
+    public Mono<Void> deletePost (Long id) {
+        return postRepository.deleteById(id).doOnSuccess(u -> {
+            log.info("Success DELETE in POST : {} ", u);
+        });
+    }
+
+    public Mono<PostEntity> findById (Long id) {
+        return postRepository.findById(id)
+                .doOnSuccess(u -> {
+                    log.info("Success FIND BY ID in POST : {} ", u);
+                });
+    }
+
+    public Mono<PostEntity> findByAuhtor (String author) {
+        return postRepository.findByAuthor(author);
     }
 
     public Flux<PostEntity> findAll () {

@@ -1,4 +1,4 @@
-package com.example.socialmediaapi.exeptions;
+package com.example.socialmediaapi.exception;
 import lombok.Getter;
 
 /*

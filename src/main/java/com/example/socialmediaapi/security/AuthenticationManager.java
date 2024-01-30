@@ -1,6 +1,6 @@
 package com.example.socialmediaapi.security;
 
-import com.example.socialmediaapi.exeptions.UnauthorizedException;
+import com.example.socialmediaapi.exception.UnauthorizedException;
 import com.example.socialmediaapi.models.UserEntity;
 import com.example.socialmediaapi.service.UserService;
 import lombok.RequiredArgsConstructor;

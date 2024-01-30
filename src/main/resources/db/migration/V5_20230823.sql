@@ -1,0 +1,1 @@
+ALTER TABLE request_list RENAME TO requestlist;

@@ -1,6 +1,6 @@
 package com.example.socialmediaapi.security;
 
-import com.example.socialmediaapi.exeptions.UnauthorizedException;
+import com.example.socialmediaapi.exception.UnauthorizedException;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import reactor.core.publisher.Mono;

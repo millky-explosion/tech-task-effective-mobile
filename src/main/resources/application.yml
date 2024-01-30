@@ -1,3 +1,5 @@
+server:
+  port: 8080
 datasource:
   info:
     username: postgres
@@ -6,6 +8,7 @@ datasource:
     r2dbc-url: r2dbc:pool:postgresql://localhost:5432/postgres
     driver: org.postgresql.Driver
     flyway-location: classpath:db/migration
+
 spring:
   r2dbc:
     url: ${datasource.info.r2dbc-url}

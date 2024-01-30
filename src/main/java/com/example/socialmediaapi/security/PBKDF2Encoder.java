@@ -9,7 +9,7 @@ import java.security.NoSuchAlgorithmException;
 import java.security.spec.InvalidKeySpecException;
 import java.util.Base64;
 @Component
-public class PBFDK2Encoder implements PasswordEncoder {
+public class PBKDF2Encoder implements PasswordEncoder {
 
     @Value("${jwt.password.encoder.secret}")
     private String secret;

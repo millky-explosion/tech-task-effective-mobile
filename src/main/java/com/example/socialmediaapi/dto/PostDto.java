@@ -8,7 +8,6 @@ import java.time.LocalDateTime;
 @Data
 @JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy.class)
 public class PostDto {
-
     private Long id;
     private String category;
     private String title;
